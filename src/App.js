@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+  import DataDisplay from "./Components/DataDisplay";
+  import Map from "./Components/Map";
+  import Search from "./Components/Search";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+  export default function App() {
+    return (
+      <div className="h-screen relative">
+        <div
+          className="z-0 h-[36%] bg-cover bg-center flex flex-col items-center gap-12"
+          style={{
+            backgroundImage: `url('${process.env.PUBLIC_URL}/assets/pattern-bg-desktop.png')`,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+          <h1 className="text-white text-5xl font-semibold tracking-wide mt-12">
+            IP Address Tracker
+          </h1>
+          <Search />
+          <DataDisplay />
+        </div>
+        <div className="h-[64%] relative z-0">
+          <Map />
+        </div>
+      </div>
+    );
+  }
